@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: dr-paws-mcp
+    runtime: python
+    rootDir: mcp_server
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: N8N_CHECK_SLOTS
+        sync: false
+      - key: N8N_BOOK_APPOINTMENT
+        sync: false
